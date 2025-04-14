@@ -2,7 +2,7 @@ import React from "react";
 import useFetchData from "./useFetchdata";
 
 function  Projects(){
-  const projects = useFetchData('http://127.0.0.1:8000/api/projects')
+  const projects = useFetchData('http://127.0.0.1:8000/api/projets')
   console.log(projects);
   
   return (
@@ -12,7 +12,7 @@ function  Projects(){
         <div className="grid md:grid-cols-2 gap-6">
           {projects?.map((project) => (
             <div key={project.id} className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
-              <img src={project.images} alt={project.title} className="rounded-md mb-4" />
+              <img src={project.images} alt={project.titre} className="rounded-md mb-4" />
               <h3 className="text-xl font-semibold text-gray-800 dark:text-white">{project.title}</h3>
               <p className="text-gray-600 dark:text-gray-300">{project.description}</p>
               <a href={project.github_url} target="_blank" className="text-blue-500 mt-2 inline-block">Voir le projet</a>

@@ -3,7 +3,7 @@ import useFetchData from "./useFetchdata";
 function Hero(){
   
 const hero = useFetchData('http://127.0.0.1:8000/api/users')
-const skills = useFetchData('http://127.0.0.1:8000/api/skills')
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 pt-20">
       <div className="text-center px-4">
@@ -23,11 +23,7 @@ const skills = useFetchData('http://127.0.0.1:8000/api/skills')
           </React.Fragment>
         ))}
         <p className="text-blue-600 dark:text-blue-400 uppercase font-bold">Développeur Web Junior</p>
-        <div className="flex flex-wrap justify-center mt-4">
-          {skills?.map(skill => (
-            <span key={skill.id} className="cursor-default inline-block bg-blue-100 text-blue-800 text-sm font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 transition duration-300">{skill.name}</span>
-          ))}
-        </div>
+        
         <p className="mt-2 text-gray-600 dark:text-gray-300 italic">"Créer, apprendre, partager."</p>
       </div>
     </section>
